@@ -29,8 +29,8 @@ jobs:
       - name: Build and Push Backend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./Backend
-          file: ./Backend/Dockerfile
+          context: ./STUDENTAPI-SPRINGBOOT
+          file: ./STUDENTAPI-SPRINGBOOT/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ansible-backend2:latest
 
@@ -38,7 +38,7 @@ jobs:
       - name: Build and Push Frontend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./Frontend
-          file: ./Frontend/Dockerfile
+          context: ./STUDENTAPI-REACT
+          file: ./STUDENTAPI-REACT/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ansible-frontend2:latest
